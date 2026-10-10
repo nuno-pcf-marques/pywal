@@ -239,3 +239,9 @@ def get_pid(name):
         return False
 
     return True
+
+def get_hyprctl_monitors():
+    result = subprocess.check_output(["hyprctl", "monitors", "-j"])
+    output = json.loads(result)
+    monitors = (m["name"] for m in output)
+    return monitors

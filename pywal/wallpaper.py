@@ -80,6 +80,11 @@ def set_wm_wallpaper(img):
     elif shutil.which("habak"):
         util.disown(["habak", "-mS", img])
 
+    elif shutil.which("hyprpaper"):
+        monitors = util.get_hyprctl_monitors()
+        for monitor in monitors:
+            util.disown(["hyprctl", "hyprpaper", "wallpaper", f"{monitor},{img}"])
+
     elif shutil.which("display"):
         util.disown(["display", "-backdrop", "-window", "root", img])
 
