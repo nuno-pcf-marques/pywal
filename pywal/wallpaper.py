@@ -84,6 +84,9 @@ def set_wm_wallpaper(img):
         monitors = util.get_hyprctl_monitors()
         for monitor in monitors:
             util.disown(["hyprctl", "hyprpaper", "wallpaper", f"{monitor},{img}"])
+    
+    elif shutil.which("awww"):
+        util.disown(["awww", "img", img])
 
     elif shutil.which("display"):
         util.disown(["display", "-backdrop", "-window", "root", img])
