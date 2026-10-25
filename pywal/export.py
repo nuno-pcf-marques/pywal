@@ -110,6 +110,7 @@ def get_export_type(export_type):
         "xresources": "colors.Xresources",
         "xmonad": "colors.hs",
         "yaml": "colors.yml",
+        "lua": "colors.lua",
     }.get(export_type, export_type)
 
 
