@@ -111,6 +111,7 @@ def get_export_type(export_type):
         "xmonad": "colors.hs",
         "yaml": "colors.yml",
         "lua": "colors.lua",
+        "conf": "colors.conf"
     }.get(export_type, export_type)
 
 
